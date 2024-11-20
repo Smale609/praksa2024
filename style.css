@@ -1,13 +1,18 @@
+:root{
+    --bg_color: rgb(225, 225, 225);
+    --font_family: 'Courier New', Courier, monospace;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--font), sans-serif;
+    font-family: var(--font_family), sans-serif;
     font-weight: normal;
     font-size: inherit;
     list-style: none;
     text-decoration: none;
-    color: inherit
+    color: inherit;
 }
 
 body {
@@ -32,7 +37,11 @@ body {
     padding: 5em;
 }
 
+.cta__button{
+    margin-inline: 50%;
+}
+
 .cta__header {
     font-size: 4em;
-    
+    font-weight: bold;
 }
