@@ -1,3 +1,38 @@
-.paragraf{
-    color: red;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font), sans-serif;
+    font-weight: normal;
+    font-size: inherit;
+    list-style: none;
+    text-decoration: none;
+    color: inherit
+}
+
+body {
+    background-color: var(--bg_color);
+}
+
+.header-container {
+    padding: 2em;
+    background-color: var(--header_bg_color);
+}
+
+.header-list{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cta-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    padding: 5em;
+}
+
+.cta__header {
+    font-size: 4em;
+    
 }
