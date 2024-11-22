@@ -10,76 +10,35 @@
 <body>
     <header>
         <div class="header-container">
-            <ul class="header-list">
-                <li class="header-list__element">
-                    <a href="/" class="link">Home</a>
-                </li>
-                <li class="header-list__element">
-                    <a href="/" class="link">O nama</a>
-                </li>
-                <li class="header-list__element">
-                    <a href="/" class="link">Kontakt</a>
-                </li>
-                <li class="header-list__element">
-                    <a href="/" class="link">Usluge</a>
-                </li>
-            </ul>
+            <nav class="header__navbar">
+                <ul class="header-list">
+                    <li class="header-list__element">
+                        <a href="/" class="link">Home</a>
+                    </li>
+                    <li class="header-list__element">
+                        <a href="/" class="link">O nama</a>
+                    </li>
+                    <li class="header-list__element">
+                        <a href="/" class="link">Kontakt</a>
+                    </li>
+                    <li class="header-list__element">
+                        <a href="/" class="link">Usluge</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__cart-container">
+                <a href="/" class="cart-btn">
+                    <img src="assets/icons/shopping-cart-outline-svgrepo-com.svg" class = "cart-icon"></img>
+                </a>
+                <a href="/" class="cart-link">Prikazi korpu</a>
+            </div>
+            
         </div>
     </header>
     <main>
-        <div class="cta-container">
-            <div class="cta__items">
-                <h1 class="cta__header">BITAN TEKST</h1>
-                <button class="cta__button">KLIKNI ME</button>
-            </div>
-        </div>
-
-        <div class="section-container">
-            <section>
-                <h1 class="section__header">Naslov</h1>
-                <p class="section__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint consequatur ea deleniti ut totam aliquam nobis labore voluptate quam corporis?</p>
-            </section>
-        </div>
-        <div class="section-container">
-            <section>
-                <h1 class="section__header">Naslov</h1>
-                <p class="section__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint consequatur ea deleniti ut totam aliquam nobis labore voluptate quam corporis?</p>
-            </section>
-        </div>
-        <div class="section-container">
-            <section>
-                <h1 class="section__header">Naslov</h1>
-                <p class="section__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint consequatur ea deleniti ut totam aliquam nobis labore voluptate quam corporis?</p>
-            </section>
-        </div>
-
-        <div class="cards-container">
-            <h1 class="cards__header">Opet neki naslov</h1>
-            <div class="card">
-                <h2 class="card__header">CARD1</h2>
-                <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam animi officia qui.</p>
-            </div>
-            <div class="card">
-                <h2 class="card__header">CARD2</h2>
-                <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam animi officia qui.</p>
-            </div>
-            <div class="card">
-                <h2 class="card__header">CARD3</h2>
-                <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam animi officia qui.</p>
-            </div>
-            <div class="card">
-                <h2 class="card__header">CARD4</h2>
-                <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam animi officia qui.</p>
-            </div>
-        </div>
-        <div class="form-container">
-            <h1 class="form__header">Uclani se?</h1>
-            <form action="">
-                <input class="form__element" type="text" name="username" id="" placeholder="Username">
-                <input class="form__element" type="password" name="password" id="" placeholder="Password">
-                <input class="form__button" type="submit" value="Login">
-            </form>
-        </div>
+        <section class="products-container">
+            <!-- <button class="add_btn">ADD PRODUCT</button> -->
+        </section>
     </main>
     <footer>
         <div class="footer-container">
@@ -100,5 +59,6 @@
             </ul>
         </div>
     </footer>
+    <script src="index.js"></script>
 </body>
 </html>

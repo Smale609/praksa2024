@@ -1,7 +1,43 @@
 :root{
     --bg_color: rgb(225, 225, 225);
     --font_family: 'Courier New', Courier, monospace;
+    --color-dark: rgb(24, 24, 24);
 }
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /* 2. Remove default margin */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+  }
+  /* 5. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /* 6. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /* 7. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
 
 * {
     margin: 0;
@@ -20,13 +56,53 @@ body {
 }
 
 .header-container {
+    display: flex;
+    justify-content: space-between;
     padding: 2em;
     background-color: var(--header_bg_color);
+    /* box-shadow: 10 10 4 rgb(0,0,0); */
+}
+
+.header__navbar{
+    width: 60%;
+    display: flex;
+    align-items: center;
 }
 
 .header-list{
     display: flex;
+    flex: 1;
     justify-content: space-between;
+}
+
+.header-list__element{
+    margin-inline: 1em;
+}
+.header__cart-btn{
+    width: 4em;
+    padding: 0.625em;
+    border-radius: 100em;
+    background-color: rgb(95, 217, 238);
+    border: 3px solid var(--color-dark);
+}
+
+.cart-icon{
+    background-size: cover;
+    width: 2em;
+    height: 2em;
+}
+
+.cart-btn{
+    padding: 1em;
+    border-radius: 100%;
+    background-color: blue;
+}
+
+.header__cart-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.125em;
 }
 
 .cta-container {
@@ -44,4 +120,48 @@ body {
 .cta__header {
     font-size: 4em;
     font-weight: bold;
+}
+
+.products-container{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid red;
+    width: 90%;
+    justify-content: space-evenly;
+    margin-inline: auto;
+}
+
+.product-container{
+    margin: 0.5em;
+    width: 18em;
+    border: 2px solid black;
+    padding-inline: 1em;
+    padding-block: 2.5em;
+}
+
+.product__header{
+    font-weight: bold;
+    color: rgb(11, 11, 11);
+    font-size: 1.5em;
+}
+
+.product__rating{
+    color: rgb(185, 144, 32);
+    font-size: 1.25em;
+}
+
+.product__price{
+    font-weight: bold;
+    color: rgb(17, 131, 13);
+    font-size: 1.75em;
+}
+
+.product__img{
+    width: 80%;
+    margin-inline: auto;
+    height: 10em;
+    background-image: url(assets/img/dainty-gold-necklace.jpg);
+    background-size: cover;
+    background-position: center;
+    border: 1px solid black;
 }

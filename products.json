@@ -1,0 +1,44 @@
+{
+    "meta":{
+        "total_items": "5"
+    },
+    "data": {
+        "items": [
+            {
+                "id": "1",
+                "name": "zlatni lancic",
+                "img_url": "assets/img/dainty-gold-necklace.jpg",
+                "rating": "3.5",
+                "price": "12.43"
+            },
+            {
+                "id": "2",
+                "name": "crna torba",
+                "img_url": "assets/img/gold-zipper-on-black-fashion-backpack.jpg",
+                "rating": "1.2",
+                "price": "9.34"
+            },
+            {
+                "id": "3",
+                "name": "satovi",
+                "img_url": "assets/img/modern-time-pieces.jpg",
+                "rating": "4.9",
+                "price": "232.99"
+            },
+            {
+                "id": "4",
+                "name": "brojanice",
+                "img_url": "assets/img/stacked-bracelets.jpg",
+                "rating": "4.2",
+                "price": "14.39"
+            },
+            {
+                "id": "5",
+                "name": "yoga tepih",
+                "img_url": "assets/img/yoga-mat-unrolled.jpg",
+                "rating": "5.0",
+                "price": "450.00"
+            }
+        ]
+    }
+}
