@@ -58,9 +58,10 @@ body {
 .header-container {
     display: flex;
     justify-content: space-between;
-    padding: 2em;
+    padding: 1em;
     background-color: var(--header_bg_color);
-    /* box-shadow: 10 10 4 rgb(0,0,0); */
+    /* box-shadow: 10 10 4 rgb(0,0,0);
+    z-index: 10; */
 }
 
 .header__navbar{
@@ -80,22 +81,24 @@ body {
 }
 .header__cart-btn{
     width: 4em;
-    padding: 0.625em;
-    border-radius: 100em;
-    background-color: rgb(95, 217, 238);
+    border-radius: 100em;;
     border: 3px solid var(--color-dark);
 }
 
 .cart-icon{
     background-size: cover;
-    width: 2em;
-    height: 2em;
+    width: 1.5em;
+    height: 1.5em;
 }
 
 .cart-btn{
-    padding: 1em;
+    padding: 0.825em;
     border-radius: 100%;
-    background-color: blue;
+    background-color: rgb(255, 213, 0);
+}
+
+.cart-link{
+    font-size: 0.825em;
 }
 
 .header__cart-container{
@@ -125,7 +128,6 @@ body {
 .products-container{
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid red;
     width: 90%;
     justify-content: space-evenly;
     margin-inline: auto;
@@ -134,9 +136,10 @@ body {
 .product-container{
     margin: 0.5em;
     width: 18em;
-    border: 2px solid black;
-    padding-inline: 1em;
-    padding-block: 2.5em;
+    background-color: rgb(251, 255, 255);
+    border-radius: 0.8125em;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.6);
+    padding: 1.5em 1.5em 1.5em 1.5em;
 }
 
 .product__header{
@@ -157,11 +160,24 @@ body {
 }
 
 .product__img{
-    width: 80%;
+    width: 100%;
     margin-inline: auto;
-    height: 10em;
+    height: 15em;
     background-image: url(assets/img/dainty-gold-necklace.jpg);
     background-size: cover;
     background-position: center;
-    border: 1px solid black;
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 6px rgba(0,0,0,0.6);
+    border-top-left-radius: 0.8125em;
+    border-top-right-radius: 0.8125em;
+}
+
+.product__btn{
+    padding: 0.25em 1.125em;
+    border: none;
+    font-weight: bold;
+    box-shadow: 1px 2px 5px rgba(0,0,0,0.4);
+    color: rgb(13, 13, 13);
+    border-radius: 0.425rem;
+    background-color: rgb(255, 213, 0);
 }
