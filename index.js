@@ -70,12 +70,12 @@ async function displayProducts(){
             productRating.classList.add('product__rating');
             //
             productPrice = document.createElement('p');
-            productPrice.innerText = `${product.price}`;
+            productPrice.innerText = `$${product.price}`;
             productPrice.classList.add('product__price');
             //
             productAddBtn = document.createElement('button');
-            productAddBtn.textContent = 'Add to cart';
-            productAddBtn.classList.add('product__btn');
+            productAddBtn.textContent = 'Dodaj u korpu';
+            productAddBtn.classList.add('product__btn', 'btn');
             productAddBtn.setAttribute('id', product.id);
             productAddBtn.addEventListener('click', () => {
                 alert(`dodan artikal sa id: ${product.id}`);

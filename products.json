@@ -37,7 +37,28 @@
                 "name": "yoga tepih",
                 "img_url": "assets/img/yoga-mat-unrolled.jpg",
                 "rating": "5.0",
-                "price": "450.00"
+                "price": "67.00"
+            },
+            {
+                "id": "6",
+                "name": "zelena majica",
+                "img_url": "assets/img/green-t-shirt.jpg",
+                "rating": "3.1",
+                "price": "9.99"
+            },
+            {
+                "id": "7",
+                "name": "teksas jakna",
+                "img_url": "assets/img/hotdog-pin-man-jean-jacket.jpg",
+                "rating": "4.0",
+                "price": "125.20"
+            },
+            {
+                "id": "8",
+                "name": "carape",
+                "img_url": "assets/img/legs-crossed-cat-socks.jpg",
+                "rating": "1.2",
+                "price": "20.00"
             }
         ]
     }
