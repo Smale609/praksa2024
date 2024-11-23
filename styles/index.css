@@ -40,10 +40,11 @@
     width: 1.125em;
     top: 2px;
     left: 40px;
-    background-image: url(assets/icons/icons8-star-96.png);
+    background-image: url(../assets/icons/icons8-star-96.png);
     background-position: center;
     background-size: cover;
     opacity: 0.9;
+    z-index: 100;
 }
 
 .product__price{

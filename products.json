@@ -9,6 +9,7 @@
                 "name": "zlatni lancic",
                 "img_url": "assets/img/dainty-gold-necklace.jpg",
                 "rating": "3.5",
+                "quantity": "4",
                 "price": "12.43"
             },
             {
@@ -16,6 +17,7 @@
                 "name": "crna torba",
                 "img_url": "assets/img/gold-zipper-on-black-fashion-backpack.jpg",
                 "rating": "1.2",
+                "quantity": "34",
                 "price": "9.34"
             },
             {
@@ -23,6 +25,7 @@
                 "name": "satovi",
                 "img_url": "assets/img/modern-time-pieces.jpg",
                 "rating": "4.9",
+                "quantity": "4",
                 "price": "232.99"
             },
             {
@@ -30,6 +33,7 @@
                 "name": "brojanice",
                 "img_url": "assets/img/stacked-bracelets.jpg",
                 "rating": "4.2",
+                "quantity": "2",
                 "price": "14.39"
             },
             {
@@ -37,6 +41,7 @@
                 "name": "yoga tepih",
                 "img_url": "assets/img/yoga-mat-unrolled.jpg",
                 "rating": "5.0",
+                "quantity": "1",
                 "price": "67.00"
             },
             {
@@ -44,6 +49,7 @@
                 "name": "zelena majica",
                 "img_url": "assets/img/green-t-shirt.jpg",
                 "rating": "3.1",
+                "quantity": "2",
                 "price": "9.99"
             },
             {
@@ -51,6 +57,7 @@
                 "name": "teksas jakna",
                 "img_url": "assets/img/hotdog-pin-man-jean-jacket.jpg",
                 "rating": "4.0",
+                "quantity": "15",
                 "price": "125.20"
             },
             {
@@ -58,6 +65,7 @@
                 "name": "carape",
                 "img_url": "assets/img/legs-crossed-cat-socks.jpg",
                 "rating": "1.2",
+                "quantity": "21",
                 "price": "20.00"
             }
         ]

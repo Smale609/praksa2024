@@ -120,6 +120,8 @@ body {
 }
 
 .header__cart-container{
+  position: sticky;
+  top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -129,3 +131,33 @@ body {
 /* @media screen  {
         Napravi da navbar postane dugme sa toggle-om
 } */
+
+/* JEBAVANJE ZA STICKEY */
+
+.header-container {
+  display: flex; /* Keep the container layout consistent */
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  position: relative; /* Ensure relative positioning for the child */
+    overflow: visible;
+}
+
+.header__navbar {
+  flex: 1;
+}
+
+.header__cart-container {
+  position: sticky;
+  top: 0; /* Sticks to the top of the viewport when scrolling */
+  z-index: 100; /* Ensure it stays on top of other content */
+  background-color: white; /* Optional: Make it visually clear */
+}
+
+header {
+  overflow: visible; /* Allow sticky behavior within the header */
+}
+
+body, html {
+  overflow: auto; /* Ensure scrolling is enabled */
+}
