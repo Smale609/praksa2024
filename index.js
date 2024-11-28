@@ -1,4 +1,4 @@
-import { fetchData, clearMain, renderInMain, addToCart } from "./helpers.js";
+import { fetchData, clearMain, renderInMain, addToCart, setCurrentView } from "./helpers.js";
 
 // funkcija za prikazivanje elemenata na stranici
 export async function displayProducts(){

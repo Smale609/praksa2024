@@ -59,3 +59,21 @@ export function addToCart(product) {
     }
     setUserCart(userCart);
 }
+
+export function initSession(){
+    if (!getCurrentView()){
+        sessionStorage.setItem('currentView', 'index');
+    }
+}
+
+export function setCurrentView(view) {
+    if (!view){
+        sessionStorage.setItem('currentView', 'index');
+    } else {
+        sessionStorage.setItem('currentView', String(view));
+    }
+}
+
+export function getCurrentView() {
+    return sessionStorage.getItem('currentView');
+}

@@ -1,4 +1,4 @@
-import { clearMain, renderInMain, getUserCart } from "./helpers.js";
+import { clearMain, renderInMain, getUserCart, setCurrentView } from "./helpers.js";
 
 export function remFromCart(item) {
     const userCart = getUserCart();
