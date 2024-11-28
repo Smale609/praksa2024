@@ -1,9 +1,30 @@
-import { fetchData, clearMain, renderInMain, addToCart, setCurrentView } from "./helpers.js";
+import { fetchData, clearMain, renderInMain, setCurrentView, getUserCart, setUserCart } from "./helpers.js";
+import { displayProduct } from "./product.js";
+
+
+export function addToCart(product) {
+    const userCart = getUserCart();
+    const itemToAdd = {
+                    "id": product.id,
+                    "name": product.name,
+                    "img_url": product.img_url,
+                    "rating": product.rating,
+                    "quantity": product.quantity,
+                    "price": product.price
+                };
+    if (userCart.findIndex(item => item.id === itemToAdd.id) === -1){
+        userCart.push(itemToAdd);
+        alert("Artikal dodan u korpu");
+    } else {
+        alert("vec imate to u korpi");
+    }
+    setUserCart(userCart);
+}
 
 // funkcija za prikazivanje elemenata na stranici
-export async function displayProducts(){
+export async function displayProductList(){
     try{
-        const products = await fetchData(); // ceka da funkcija pokupi i parsira podatke "sa backend-a"
+        const products = await fetchData('products.json'); // ceka da funkcija pokupi i parsira podatke "sa backend-a"
         if (!products) {
             throw new Error('Something went wrong when parsing the response');
         }
@@ -13,6 +34,9 @@ export async function displayProducts(){
         products.data.items.forEach(product => {    // za svaki element koji je vracen kreiramo div element u kome se nalaze podaci tog artikla
             const productDiv = document.createElement('div');
             productDiv.classList.add('product-container');
+            productDiv.addEventListener('click', () => {
+                displayProduct(product.id); // prikazuje detaljnije o artiklu (kao GET /products/<productId>)
+            });
 
             const productImg = document.createElement('div');
             productImg.classList.add('product__img');
@@ -35,7 +59,11 @@ export async function displayProducts(){
             productAddBtn.textContent = 'Dodaj u korpu';
             productAddBtn.classList.add('product__btn', 'btn');
             productAddBtn.setAttribute('id', product.id);
-            productAddBtn.addEventListener('click', () => addToCart(product));
+            productAddBtn.addEventListener('click', (event) => {
+                event.stopPropagation();    // sluzi da dodavanje u korpu ne trigeruje i displayProduct funkciju na roditeljskom elementu
+                addToCart(product);
+            });
+            //
             productDiv.append(productImg, productName, productRating, productPrice, productAddBtn); // ubacujemo podatke(h1,p,button elemente) u div koji nam drzi sve podatke za jedan artikal
             productsContainer.appendChild(productDiv); // novokreirani div dodajemo u container sa svim ostalim artiklima
         });

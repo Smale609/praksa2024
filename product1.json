@@ -1,0 +1,18 @@
+{
+    "data": {
+                "id": "1",
+                "name": "zlatni lancic",
+                "img_url": "assets/img/dainty-gold-necklace.jpg",
+                "rating": "3.5",
+                "quantity": "4",
+                "price": "12.43",
+                "description": "neki mnogo mnogo dugacak tekst koji opisuje ovaj proizvod, ali ja posto nisam kreativan malo cu ovako nabadati eto cisto da se broji da ima nesto",
+                "location": "Donja Snjegotina",
+                "quality": "ko novo",
+                "seller_info": {
+                                    "seller_id": "2132",
+                                    "seller_name": "Mitar Gvozden",
+                                    "seller_rating": "2.3"
+                                }
+            }
+}
