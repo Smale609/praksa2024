@@ -1,0 +1,156 @@
+
+.wrapper--page{
+    width: 85%;
+    margin-inline: auto;
+}
+
+/* .product-container--page{
+    background-color: red;
+} */
+
+.product__img--page{
+    width: 70%;
+    margin-inline: auto;
+    height: 60vh;
+    margin-bottom: 0.825em;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 6px rgba(0,0,0,0.6);
+}
+
+.product-container--page{
+    border: 1px solid rgba(0,0,0,0.6);
+    padding: 1.75em;
+}
+
+.product__header--page{
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.product__price--page{
+    font-size: 4em;
+    color: rgb(30, 155, 11);;
+    font-weight: bold;
+}
+
+.product__description--page{
+    border: 1px solid rgba(0,0,0,0.2);
+    padding: 0.825em;
+}
+
+.product__description-label--page{
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+.product__rating--page{
+    margin-top: 1.5em;
+    margin-bottom: 0.125em;
+}
+
+.product__rating-label--page{
+    font-size: 2em;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.product__rating-data--page{
+    margin-left: 0.25em;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    color: var(--color-primary);
+    font-size: 3em;
+}
+
+.product__rating-data--page::after{
+    content:"";
+    position: absolute;
+    height: 1.125em;
+    width: 1.125em;
+    top: 0em;
+    left: 2em;
+    background-image: url(../assets/icons/icons8-star-96.png);
+    background-position: center;
+    background-size: cover;
+    opacity: 0.9;
+    z-index: 100;
+}
+
+.product__quantity-label--page{
+    font-size: 1.75em;
+    display: inline-block;
+}
+
+.product__quantity-data--page{
+    margin-left: 0.25em;
+    font-weight: bold;
+    font-size: 1.75em;
+    display: inline-block;
+}
+
+.product__time--page{
+    margin-block: 1em;
+}
+
+.product__time-label--page{
+    font-weight: bold;
+    font-size: 1.25em;
+    display: inline-block;
+}
+
+.product__location--page{
+    margin-bottom: 2em;
+}
+
+.product__location-label--page{
+    font-size: 1.5em;
+}
+
+.product__location-data--page{
+    font-size: 1.75em;
+    font-weight: bold;
+}
+
+.product__btn--page{
+    font-size: 1.5em;
+}
+
+.product__seller-container--page{
+    border: 1px solid rgba(0,0,0,0.6);
+}
+
+.seller-label--page{
+    font-size: 1.25em;
+}
+
+.seller-name--page{
+    font-size: 1.75em;
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.seller-rating--page{
+    margin-left: 0.25em;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    color: var(--color-primary);
+    font-size: 1.5em;
+}
+
+.seller-rating--page::after{
+    content:"";
+    position: absolute;
+    height: 1.125em;
+    width: 1.125em;
+    top: 0em;
+    left: 2em;
+    background-image: url(../assets/icons/icons8-star-96.png);
+    background-position: center;
+    background-size: cover;
+    opacity: 0.9;
+    z-index: 100;
+}
