@@ -9,6 +9,7 @@ export function remFromCart(item) {
 }
 
 export function displayCart(){
+    document.querySelector('.header__cart-container').classList.add('hidden');
     clearMain()
     const cartItems = document.createElement('section');
     cartItems.classList.add('cart-items--container');

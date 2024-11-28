@@ -16,6 +16,14 @@ cartBtn.addEventListener('click', (event) => {
     displayCart();
 });
 
+const cartLink = document.querySelector('.cart-link');
+cartLink.addEventListener('click', (event) => {
+    event.preventDefault();
+    sessionStorage.setItem('product_id', '');
+    setCurrentView('cart');
+    displayCart();
+});
+
 const homeBtn = document.querySelector('.home-btn');
 homeBtn.addEventListener('click', () => {
     sessionStorage.setItem('product_id', '');

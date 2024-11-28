@@ -75,10 +75,10 @@ body {
 /* Header styles */
 
 .header-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 1em;
-    background-color: var(--header_bg_color);
+  display: inline-block;
+  justify-content: space-between;
+  padding: 1em;
+  background-color: var(--header_bg_color);
 }
 
 .header__navbar{
@@ -137,11 +137,12 @@ body {
 
 .header-container {
   display: flex; /* Keep the container layout consistent */
+  width: 90%;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
   position: relative; /* Ensure relative positioning for the child */
-    overflow: visible;
+  overflow: visible;
 }
 
 .header__navbar {
@@ -149,16 +150,19 @@ body {
 }
 
 .header__cart-container {
-  position: sticky;
-  top: 0; /* Sticks to the top of the viewport when scrolling */
+  position: fixed;
+   /* Sticks to the top of the viewport when scrolling */
+  right: 1em;
+  bottom: 1em;
   z-index: 100; /* Ensure it stays on top of other content */
-  background-color: white; /* Optional: Make it visually clear */
+  /* background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.1)); */
 }
 
-header {
-  overflow: visible; /* Allow sticky behavior within the header */
+.cart-btn{
+  box-shadow: 0px 0px 9px rgba(0,0,0,0.5);
 }
 
-body, html {
-  overflow: auto; /* Ensure scrolling is enabled */
+
+.hidden{
+  display: none;
 }
