@@ -1,17 +1,19 @@
-let userCart;
-console.log(userCart);
+import { clearMain, renderInMain, getUserCart } from "./helpers.js";
 
-
-function remFromCart(item) {
+export function remFromCart(item) {
+    const userCart = getUserCart();
     const indexToRem = userCart.findIndex(cartItem => cartItem.id === item.id); // trazimo koji je indeks artikla koji korisnik zeli ukloniti
     userCart.splice(indexToRem, 1); // uklanjamo artikal iz korpe
     localStorage.setItem('userCart', JSON.stringify(userCart)); // modifikovanu korpu cuvamo u memoriju
     displayCart();  // ponovo renderujemo listu artikala u korpi da bi se promjena prikazala (refresh)
 }
 
-function displayCart(){
-    const itemsContainer = document.querySelector('.cart-items--container');
-    itemsContainer.innerHTML = '';  // brisemo ako bilo sta ima u container-u (kljucno za refresh)
+export function displayCart(){
+    clearMain()
+    const cartItems = document.createElement('section');
+    cartItems.classList.add('cart-items--container');
+    cartItems.innerHTML = '';  // brisemo ako bilo sta ima u container-u (kljucno za refresh)
+    const userCart = getUserCart();
     userCart.forEach(item => {
         // container za artikal
         const itemDiv = document.createElement('div');
@@ -39,11 +41,7 @@ function displayCart(){
         itemRemBtn.addEventListener('click', () => remFromCart(item));
         // dodavanje elemenata u container
         itemDiv.append(itemImg, itemName, itemRating, itemPrice, itemRemBtn);
-        itemsContainer.appendChild(itemDiv);
+        cartItems.appendChild(itemDiv);
     });
+    renderInMain(cartItems);
 };
-
-document.addEventListener('DOMContentLoaded', () => {
-    userCart = JSON.parse(localStorage.getItem('userCart')) || '[]';
-    displayCart();
-});
