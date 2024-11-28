@@ -3,6 +3,7 @@ import { displayProduct } from "./product.js";
 
 
 export function addToCart(product) {
+    // PREPRAVI DA UZIMA SAMO ID, A DA SE DODAVANJE ODVIJA PREKO FETCH
     const userCart = getUserCart();
     const itemToAdd = {
                     "id": product.id,
