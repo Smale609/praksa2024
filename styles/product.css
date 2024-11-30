@@ -2,143 +2,147 @@
 .wrapper--page{
     width: 85%;
     margin-inline: auto;
+    font-size: var(--fs-2);
 }
 
-/* .product-container--page{
-    background-color: red;
-} */
-
 .product__img--page{
-    width: 70%;
+    width: 50%;
+    height: 50vh;
     margin-inline: auto;
-    height: 55vh;
-    margin-bottom: 0.825em;
-    background-size: cover;
+    margin-bottom: 0.825rem;
+    background-size: 10rem;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
     border: 1px solid rgba(0,0,0,0.2);
     box-shadow: 0px 0px 6px rgba(0,0,0,0.6);
 }
 
 .product-container--page{
     border: 1px solid rgba(0,0,0,0.6);
-    padding: 1.75em;
+    padding: 1.75rem;
 }
 
 .product__header--page{
-    font-size: 3em;
+    font-size: var(--fs-3);
     font-weight: bold;
 }
 
 .product__price--page{
-    font-size: 4em;
-    color: rgb(30, 155, 11);;
+    font-size: var(--fs-3);
     font-weight: bold;
 }
 
 .product__description--page{
     border: 1px solid rgba(0,0,0,0.2);
-    padding: 0.825em;
+    padding: 0.825rem;
+    font-size: var(--fs-1);
+    color: var(--color-dark-1);
 }
 
 .product__description-label--page{
-    font-size: 1.5em;
-    margin-bottom: 1em;
+    font-size: var(--fs-2);
+    margin-bottom: 0.125rem;
+    color: var(--color-dark-0);
 }
 
 .product__rating--page{
-    margin-top: 1.5em;
-    margin-bottom: 0.125em;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5em;
 }
 
 .product__rating-label--page{
-    font-size: 2em;
     font-weight: bold;
     display: inline-block;
 }
 
 .product__rating-data--page{
-    margin-left: 0.25em;
+    margin-left: 0.5rem;
     font-weight: bold;
     position: relative;
     display: inline-block;
     color: var(--color-primary);
-    font-size: 3em;
 }
 
 .product__rating-data--page::after{
     content:"";
     position: absolute;
-    height: 1.125em;
-    width: 1.125em;
-    top: 0em;
-    left: 2em;
+    height: 1.125rem;
+    width: 1.125rem;
+    top: 1px;
+    left: 1.615rem;
     background-image: url(../assets/icons/icons8-star-96.png);
     background-position: center;
     background-size: cover;
-    opacity: 0.9;
+    opacity: 0.8;
     z-index: 100;
 }
 
+.product__quantity--page{
+    margin-bottom: 0.5rem;
+}
+
 .product__quantity-label--page{
-    font-size: 1.75em;
     display: inline-block;
+    font-weight: bold;
 }
 
 .product__quantity-data--page{
-    margin-left: 0.25em;
-    font-weight: bold;
-    font-size: 1.75em;
+    margin-left: 0.5rem;
     display: inline-block;
 }
 
 .product__time--page{
-    margin-block: 1em;
+    margin-bottom: 0.5rem;
 }
 
 .product__time-label--page{
     font-weight: bold;
-    font-size: 1.25em;
     display: inline-block;
+}
+
+.product__time-data--page{
+    font-size: var(--fs-1);
 }
 
 .product__location--page{
-    margin-bottom: 2em;
+    margin-bottom: 1rem;
 }
 
 .product__location-label--page{
-    font-size: 1.5em;
+    display: inline-block;
 }
 
 .product__location-data--page{
-    font-size: 1.75em;
+    display: inline-block;
     font-weight: bold;
+    margin-left: 0.5rem;
 }
 
-.product__btn--page{
-    font-size: 1.5em;
-}
 
 .product__seller-container--page{
-    border: 1px solid rgba(0,0,0,0.6);
+    margin-block: 1rem;
+    font-size: var(--fs-1);
 }
 
 .seller-label--page{
-    font-size: 1.25em;
+    display: inline-block;
+    color: var(--color-dark-2);
 }
 
 .seller-name--page{
-    font-size: 1.75em;
     display: inline-block;
-    margin-right: 1em;
+    font-weight: bold;
+    margin-left: 0.5rem;
+    color: var(--color-dark-1);
 }
 
 .seller-rating--page{
-    margin-left: 0.25em;
+    margin-left: 0.5rem;
     font-weight: bold;
     position: relative;
     display: inline-block;
     color: var(--color-primary);
-    font-size: 1.5em;
 }
 
 .seller-rating--page::after{
@@ -146,11 +150,11 @@
     position: absolute;
     height: 1.125em;
     width: 1.125em;
-    top: 0em;
-    left: 2em;
+    top: 1px;
+    left: 1.615rem;
     background-image: url(../assets/icons/icons8-star-96.png);
     background-position: center;
     background-size: cover;
-    opacity: 0.9;
+    opacity: 0.8;
     z-index: 100;
 }

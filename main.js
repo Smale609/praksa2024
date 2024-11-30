@@ -3,6 +3,7 @@ import { getCurrentView, initSession, setCurrentView } from "./helpers.js";
 import { displayProductList } from "./index.js";
 import { displayProduct } from "./product.js";
 
+// IMAMO BUG SA HOVEROM PREKO STICKEY CART IKONICE PA SKONTAJ
 
 initSession();
 // let userCart = getUserCart()

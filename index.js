@@ -48,24 +48,20 @@ export async function displayProductList(){
             productName.innerText = `${product.name}`;
             productName.classList.add('product__header');
             //
-            const productRating = document.createElement('p');
-            productRating.innerText = `${product.rating}`;
-            productRating.classList.add('product__rating');
-            //
             const productPrice = document.createElement('p');
             productPrice.innerText = `$${product.price}`;
             productPrice.classList.add('product__price');
             //
-            const productAddBtn = document.createElement('button'); // dodajemo dugme koje nam sluzi da dodamo taj artikal u korpu
-            productAddBtn.textContent = 'Dodaj u korpu';
-            productAddBtn.classList.add('product__btn', 'btn');
-            productAddBtn.setAttribute('id', product.id);
-            productAddBtn.addEventListener('click', (event) => {
-                event.stopPropagation();    // sluzi da dodavanje u korpu ne trigeruje i displayProduct funkciju na roditeljskom elementu
-                addToCart(product);
-            });
+            // const productAddBtn = document.createElement('button'); // dodajemo dugme koje nam sluzi da dodamo taj artikal u korpu
+            // productAddBtn.textContent = 'Dodaj u korpu';
+            // productAddBtn.classList.add('product__btn', 'btn');
+            // productAddBtn.setAttribute('id', product.id);
+            // productAddBtn.addEventListener('click', (event) => {
+            //     event.stopPropagation();    // sluzi da dodavanje u korpu ne trigeruje i displayProduct funkciju na roditeljskom elementu
+            //     addToCart(product);
+            // });
             //
-            productDiv.append(productImg, productName, productRating, productPrice, productAddBtn); // ubacujemo podatke(h1,p,button elemente) u div koji nam drzi sve podatke za jedan artikal
+            productDiv.append(productImg, productName, productPrice); // ubacujemo podatke(h1,p,button elemente) u div koji nam drzi sve podatke za jedan artikal
             productsContainer.appendChild(productDiv); // novokreirani div dodajemo u container sa svim ostalim artiklima
         });
         renderInMain(productsContainer);

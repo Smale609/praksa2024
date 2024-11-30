@@ -1,9 +1,19 @@
 :root{
     --bg_color: rgb(240, 240, 240);
-    --font_family: 'Courier New', Courier, monospace;
-    --color-dark: rgb(24, 24, 24);
+    --font_family: Roboto;
+    /* --fs-100: 0.75rem; */
+    --fs-1: 0.875rem;
+    --fs-2: 1rem;
+    /* --fs-3: 1.125rem; */
+    --fs-3: 1.25rem;
+    /* --fs-500: 1.5rem; */
+    --color-dark-0: rgba(20, 20, 20, 1);
+    --color-dark-1: rgba(20, 20, 20, 0.8);
+    --color-dark-2: rgba(20, 20, 20, 0.4);
+    --color-light-0: rgba(255,255,255,1);
     --color-primary: rgb(255, 213, 0);
-    --color-btn-hover: rgb(227, 189, 0);
+    --color-btn-hover: var(--color-dark-1);
+    --color-btn-primary-hover: rgb(216, 183, 16);
 }
 
 /* 1. Use a more-intuitive box-sizing model */
@@ -20,6 +30,7 @@
     line-height: 1.5;
     /* 4. Improve text rendering */
     -webkit-font-smoothing: antialiased;
+    color: var(--color-dark-0);
   }
   /* 5. Improve media defaults */
   img, picture, video, canvas, svg {
@@ -67,19 +78,24 @@ body {
     cursor: pointer;
 }
 
+.btn{
+  color: var(--color-dark-0);
+  background-color: var(--color-primary);
+  display: block;
+  padding: 0.25em 1.125em;
+  border: none;
+  font-weight: bold;
+  margin-top: 0.125em;
+  box-shadow: 1px 2px 5px rgba(0,0,0,0.4);
+  border-radius: 0.325rem;
+}
+
 .btn:hover{
-    background-color: var(--color-btn-hover);
+    background-color: var(--color-btn-primary-hover);
     cursor: pointer;
 }
 
 /* Header styles */
-
-.header-container {
-  display: inline-block;
-  justify-content: space-between;
-  padding: 1em;
-  background-color: var(--header_bg_color);
-}
 
 .header__navbar{
     width: 60%;
@@ -97,12 +113,6 @@ body {
     margin-inline: 1em;
 }
 
-.header__cart-btn{
-    width: 4em;
-    border-radius: 100em;;
-    border: 3px solid var(--color-dark);
-}
-
 .cart-icon{
     background-size: cover;
     width: 1.5em;
@@ -113,11 +123,16 @@ body {
     padding: 0.825em;
     border-radius: 100%;
     background-color: var(--color-primary);
+    box-shadow: 0px 0px 9px rgba(0,0,0,0.5);
     border: none;
 }
 
+.cart-btn:hover{
+  background-color: var(--color-btn-primary-hover);
+}
+
 .cart-link{
-    font-size: 0.825em;
+    font-size: var(--fs-1);
 }
 
 .header__cart-container{
@@ -151,15 +166,9 @@ body {
 
 .header__cart-container {
   position: fixed;
-   /* Sticks to the top of the viewport when scrolling */
   right: 1em;
   bottom: 1em;
-  z-index: 100; /* Ensure it stays on top of other content */
-  /* background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.1)); */
-}
-
-.cart-btn{
-  box-shadow: 0px 0px 9px rgba(0,0,0,0.5);
+  z-index: 100;
 }
 
 

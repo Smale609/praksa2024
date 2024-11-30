@@ -111,8 +111,6 @@ export async function displayProduct(productId) {
             addToCart(product);
         });
 
-        productContainer.append(productImg, productName, productPrice, productDescription, productRating, productQuantity, productTimePublished, productLocation, productAddBtn)
-
         // informacije o prodavcu
         const sellerContainer = document.createElement('section');
         sellerContainer.classList.add('product__seller-container--page');
@@ -127,7 +125,7 @@ export async function displayProduct(productId) {
         sellerRating.innerText = `${productPayload.data.seller_info.rating}`;
         sellerContainer.append(sellerLabel, sellerName, sellerRating);
 
-        productPage.append(productContainer, sellerContainer);
+        productPage.append(productImg, productName, productPrice, sellerContainer, productDescription, productRating, productQuantity, productTimePublished, productLocation, productAddBtn);
         console.log(productPage)
         //console.log(productImg, productName, productPrice, productDescription, productRating, productQuantity, productTimePublished, productLocation, sellerContainer)
         renderInMain(productPage);
