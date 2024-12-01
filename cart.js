@@ -21,23 +21,23 @@ function createQuantityForm(itemQuantity){
         const decrbtn = document.createElement('button');
         decrbtn.classList.add('cart-item__form__decr-btn');
         decrbtn.innerText = '-';
-        decrbtn.addEventListener('click', (event) => {
-            event.preventDefault()
-            if(currentQuantityVal > 1){
-                currentQuantityVal--;
-                currentQuantity.innerText = `${currentQuantityVal}`;
-            }
-        });
+        // decrbtn.addEventListener('click', (event) => {
+        //     event.preventDefault()
+        //     if(currentQuantityVal > 1){
+        //         currentQuantityVal--;
+        //         currentQuantity.innerText = `${currentQuantityVal}`;
+        //     }
+        // });
         const incrbtn = document.createElement('button');
         incrbtn.classList.add('cart-item__form__incr-btn');
         incrbtn.innerText = '+';
-        incrbtn.addEventListener('click', (event) => {
-            event.preventDefault()
-            if(currentQuantityVal < itemQuantity){
-                currentQuantityVal++;
-                currentQuantity.innerText = `${currentQuantityVal}`;
-            }
-        });
+        // incrbtn.addEventListener('click', (event) => {
+        //     event.preventDefault()
+        //     if(currentQuantityVal < itemQuantity){
+        //         currentQuantityVal++;
+        //         currentQuantity.innerText = `${currentQuantityVal}`;
+        //     }
+        // });
         form.append(decrbtn, currentQuantity, incrbtn);
         return form;
     } catch(error){
@@ -61,6 +61,7 @@ function createCartHeadings(){
     gridHeaderValTotal.innerText = 'Ukupno';
     return [gridHeaderValName, gridHeaderValPrice, gridHeaderValQuantity, gridHeaderValTotal];
 }
+
 
 export function displayCart(){
     document.querySelector('.header__cart-container').classList.add('hidden');
@@ -93,16 +94,16 @@ export function displayCart(){
         // kolicina
         const itemQuantityForm = createQuantityForm(item.quantity);
         itemQuantityForm.classList.add('cart-item-form');
-        let itemQuantity = itemQuantityForm.querySelector('.cart-item-form-quantity').innerText;
+        let itemQuantity = 1;
         console.log(itemQuantity);
         // cijena
         const itemPrice = document.createElement('p');
         itemPrice.innerText = `$${item.price}`;
         itemPrice.classList.add('item__price');
         // ukupno
-        const itemTotal = document.createElement('p');
-        itemPrice.innerText = `$${item.price}`;
-        itemPrice.classList.add('item__price');
+        let itemTotal = document.createElement('p');
+        itemTotal.innerText = `$${item.price * itemQuantity}`;
+        itemTotal.classList.add('item__price');
         // "ukloni" dugme
         const itemRemBtn = document.createElement('button');
         itemRemBtn.textContent = 'Ukloni';
@@ -110,6 +111,29 @@ export function displayCart(){
         itemRemBtn.addEventListener('click', () => remFromCart(item));
         // dodavanje elemenata u container
         itemDiv.append(itemImg, itemName, itemPrice, itemQuantityForm, itemTotal, itemRemBtn);
+        // CART ITEM HANDLER
+        itemDiv.addEventListener('click', (event) => {
+            if (event.target.classList.contains('cart-item__form__incr-btn')){
+                event.preventDefault()
+                if(itemQuantity < item.quantity){
+                    itemQuantity++;
+                    itemQuantityForm.querySelector('.cart-item-form-quantity').innerText = `${itemQuantity}`;   //updateo prikaza kolicine
+                    let total = (item.price * itemQuantity).toFixed(2); // zaokruzuje na 2 cifre
+                    itemTotal.innerText = `$${total}`;
+                }
+            } else if (event.target.classList.contains('cart-item__form__decr-btn')){
+                event.preventDefault()
+                if(itemQuantity > 1){
+                    itemQuantity--;
+                    itemQuantityForm.querySelector('.cart-item-form-quantity').innerText = `${itemQuantity}`;
+                    let total = (item.price * itemQuantity).toFixed(2);
+                    itemTotal.innerText = `$${total}`;
+                }
+            } else if (event.target.classList.contains('cart-item__btn')){
+                remFromCart(item)
+            }
+        });
+        //
         cartItems.appendChild(itemDiv);
     });
     renderInMain(cartItems);
