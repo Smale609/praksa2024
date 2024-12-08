@@ -99,12 +99,10 @@ export async function displayProduct(productId) {
         productAddBtn.textContent = 'Dodaj u korpu';
         productAddBtn.classList.add('product__btn', 'product__btn--page', 'btn');
         productAddBtn.addEventListener('click', (event) => {
-            // PRIVREMENO DOK SE NE URADI FETCH DODAVANJE
             const product = {
                 "id": productPayload.data.id,
                 "name": productPayload.data.name,
                 "img_url": productPayload.data.img_url,
-                "rating": productPayload.data.rating,
                 "quantity": productPayload.data.quantity,
                 "price": productPayload.data.price
             };
@@ -126,7 +124,7 @@ export async function displayProduct(productId) {
         sellerContainer.append(sellerLabel, sellerName, sellerRating);
 
         productPage.append(productImg, productName, productPrice, sellerContainer, productDescription, productRating, productQuantity, productTimePublished, productLocation, productAddBtn);
-        console.log(productPage)
+        // console.log(productPage)
         //console.log(productImg, productName, productPrice, productDescription, productRating, productQuantity, productTimePublished, productLocation, sellerContainer)
         renderInMain(productPage);
     }

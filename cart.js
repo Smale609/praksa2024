@@ -2,7 +2,11 @@ import { clearMain, renderInMain, getUserCart, setCurrentView } from "./helpers.
 
 export function remFromCart(item) {
     const userCart = getUserCart();
-    const indexToRem = userCart.findIndex(cartItem => cartItem.id === item.id); // trazimo koji je indeks artikla koji korisnik zeli ukloniti
+    const indexToRem = userCart.findIndex(cartItem => cartItem.id == item.id); // trazimo koji je indeks artikla koji korisnik zeli ukloniti
+    if(indexToRem === -1){
+        alert('Greska pri ucitavanju artikla');
+        return null
+    }
     userCart.splice(indexToRem, 1); // uklanjamo artikal iz korpe
     localStorage.setItem('userCart', JSON.stringify(userCart)); // modifikovanu korpu cuvamo u memoriju
     displayCart();  // ponovo renderujemo listu artikala u korpi da bi se promjena prikazala (refresh)
@@ -21,23 +25,9 @@ function createQuantityForm(itemQuantity){
         const decrbtn = document.createElement('button');
         decrbtn.classList.add('cart-item__form__decr-btn');
         decrbtn.innerText = '-';
-        // decrbtn.addEventListener('click', (event) => {
-        //     event.preventDefault()
-        //     if(currentQuantityVal > 1){
-        //         currentQuantityVal--;
-        //         currentQuantity.innerText = `${currentQuantityVal}`;
-        //     }
-        // });
         const incrbtn = document.createElement('button');
         incrbtn.classList.add('cart-item__form__incr-btn');
-        incrbtn.innerText = '+';
-        // incrbtn.addEventListener('click', (event) => {
-        //     event.preventDefault()
-        //     if(currentQuantityVal < itemQuantity){
-        //         currentQuantityVal++;
-        //         currentQuantity.innerText = `${currentQuantityVal}`;
-        //     }
-        // });
+        incrbtn.innerText = '+';;
         form.append(decrbtn, currentQuantity, incrbtn);
         return form;
     } catch(error){
@@ -66,23 +56,33 @@ function createCartHeadings(){
 export function displayCart(){
     document.querySelector('.header__cart-container').classList.add('hidden');
     clearMain()
-    const cartItems = document.createElement('section');
-    cartItems.classList.add('cart-items--container');
-    cartItems.innerHTML = '';  // brisemo ako bilo sta ima u container-u (kljucno za refresh)
+    const cartElements = document.createElement('section');
+    cartElements.classList.add('cart-container');
+    cartElements.innerHTML = '';  // brisemo ako bilo sta ima u container-u (kljucno za refresh)
+    //
     const cartHeading = document.createElement('h1');
-    cartHeading.classList.add('cart-header');
+    cartHeading.classList.add('cart-heading');
     cartHeading.innerText = 'Vasa korpa';
-
+    //
+    const cartGridHeadings = document.createElement('div');
+    cartGridHeadings.classList.add('cart-grid-headings');
     createCartHeadings().forEach(element => {
-        cartItems.append(element);
+        cartGridHeadings.append(element);
     });
+    cartElements.append(cartHeading, cartGridHeadings);
+
+    const cartGridItems = document.createElement('div');
+    cartGridItems.classList.add('cart-grid-items');
 
     const userCart = getUserCart();
 
     userCart.forEach(item => {
         // container za artikal
         const itemDiv = document.createElement('div');
-        itemDiv.classList.add('cart-item--container');
+        itemDiv.classList.add('cart-grid-item');
+        //
+        const item1stHeading = document.createElement('div');
+        item1stHeading.classList.add('item__1st-heading');
         // slika
         const itemImg = document.createElement('div');
         itemImg.classList.add('item__img');
@@ -91,9 +91,11 @@ export function displayCart(){
         const itemName = document.createElement('h1');
         itemName.innerText = `${item.name}`;
         itemName.classList.add('item__header');
+        //
+        item1stHeading.append(itemImg, itemName);
         // kolicina
         const itemQuantityForm = createQuantityForm(item.quantity);
-        itemQuantityForm.classList.add('cart-item-form');
+        itemQuantityForm.classList.add('cart-item__form');
         let itemQuantity = 1;
         console.log(itemQuantity);
         // cijena
@@ -101,6 +103,9 @@ export function displayCart(){
         itemPrice.innerText = `$${item.price}`;
         itemPrice.classList.add('item__price');
         // ukupno
+        // const item4thHeading = document.createElement('div');
+        // item4thHeading.classList.add('item__4thHeading');
+        //
         let itemTotal = document.createElement('p');
         itemTotal.innerText = `$${item.price * itemQuantity}`;
         itemTotal.classList.add('item__price');
@@ -108,11 +113,14 @@ export function displayCart(){
         const itemRemBtn = document.createElement('button');
         itemRemBtn.textContent = 'Ukloni';
         itemRemBtn.classList.add('cart-item__btn', 'btn');
-        itemRemBtn.addEventListener('click', () => remFromCart(item));
+        //
+        // item4thHeading.append(itemTotal, itemRemBtn);
         // dodavanje elemenata u container
-        itemDiv.append(itemImg, itemName, itemPrice, itemQuantityForm, itemTotal, itemRemBtn);
+        itemDiv.append(item1stHeading, itemPrice, itemQuantityForm, itemTotal, itemRemBtn);
         // CART ITEM HANDLER
+        // napomena: handler ce mijenjati i kompletnu cijenu citave narudzbe sa vise artikala pa imaj to na umu
         itemDiv.addEventListener('click', (event) => {
+            // !!!!!! QUANTITY TREBA SACUVATI U USERCART !!!!
             if (event.target.classList.contains('cart-item__form__incr-btn')){
                 event.preventDefault()
                 if(itemQuantity < item.quantity){
@@ -134,7 +142,8 @@ export function displayCart(){
             }
         });
         //
-        cartItems.appendChild(itemDiv);
+        cartGridItems.append(itemDiv);
     });
-    renderInMain(cartItems);
+    cartElements.append(cartGridItems);
+    renderInMain(cartElements);
 };

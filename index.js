@@ -5,14 +5,15 @@ import { displayProduct } from "./product.js";
 export function addToCart(product) {
     // PREPRAVI DA UZIMA SAMO ID, A DA SE DODAVANJE ODVIJA PREKO FETCH
     const userCart = getUserCart();
+    // prepravi u orderToAdd i dodaj total umjesto renderovanja dinamicki
     const itemToAdd = {
                     "id": product.id,
                     "name": product.name,
                     "img_url": product.img_url,
-                    "rating": product.rating,
                     "quantity": product.quantity,
                     "price": product.price
                 };
+    // OVO IZBACI I DODAJ SAMO MODIFIKACIJU QUANTITY
     if (userCart.findIndex(item => item.id === itemToAdd.id) === -1){
         userCart.push(itemToAdd);
         alert("Artikal dodan u korpu");
@@ -51,15 +52,6 @@ export async function displayProductList(){
             const productPrice = document.createElement('p');
             productPrice.innerText = `$${product.price}`;
             productPrice.classList.add('product__price');
-            //
-            // const productAddBtn = document.createElement('button'); // dodajemo dugme koje nam sluzi da dodamo taj artikal u korpu
-            // productAddBtn.textContent = 'Dodaj u korpu';
-            // productAddBtn.classList.add('product__btn', 'btn');
-            // productAddBtn.setAttribute('id', product.id);
-            // productAddBtn.addEventListener('click', (event) => {
-            //     event.stopPropagation();    // sluzi da dodavanje u korpu ne trigeruje i displayProduct funkciju na roditeljskom elementu
-            //     addToCart(product);
-            // });
             //
             productDiv.append(productImg, productName, productPrice); // ubacujemo podatke(h1,p,button elemente) u div koji nam drzi sve podatke za jedan artikal
             productsContainer.appendChild(productDiv); // novokreirani div dodajemo u container sa svim ostalim artiklima

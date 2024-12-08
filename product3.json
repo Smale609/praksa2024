@@ -1,0 +1,19 @@
+{
+    "data": {
+                "id": "3",
+                "name": "satovi",
+                "img_url": "assets/img/modern-time-pieces.jpg",
+                "rating": "3.5",
+                "quantity": "20",
+                "price": "14.43",
+                "description": "neki mnogo mnogo dugacak tekst koji opisuje ovaj proizvod, ali ja posto nisam kreativan malo cu ovako nabadati eto cisto da se broji da ima nesto",
+                "location": "Donja Snjegotina",
+                "quality": "ko novo",
+                "time_published": "2023-02-15T13:45:30 -> 6/15/2009 (en-US)",
+                "seller_info": {
+                                    "id": "2132",
+                                    "name": "Mitar Gvozden",
+                                    "rating": "2.3"
+                                }
+            }
+}
